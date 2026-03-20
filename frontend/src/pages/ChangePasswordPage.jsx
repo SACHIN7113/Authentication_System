@@ -83,7 +83,7 @@ export default function ChangePasswordPage() {
             Update your account password. Use a strong password with at least 6 characters.
           </p>
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form className="space-y-4" onSubmit={handleSubmit} noValidate>
             <div className="relative">
               <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="current_password">
                 Current Password
@@ -120,8 +120,6 @@ export default function ChangePasswordPage() {
                 value={form.new_password}
                 onChange={handleChange}
                 minLength={6}
-                pattern="^(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z0-9]).{6,}$"
-                title="At least 6 characters, one uppercase letter, one number, and one special character."
                 autoComplete="new-password"
                 required
                 className="w-full rounded-xl border border-slate-300 bg-white/80 px-3 py-2.5 pr-11 outline-none transition focus:border-orange-500"

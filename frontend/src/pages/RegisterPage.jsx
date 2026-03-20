@@ -69,7 +69,7 @@ export default function RegisterPage() {
           <h2 className="mb-2 text-3xl font-bold text-slate-900">Create Account</h2>
           <p className="mb-6 text-sm text-slate-700">Register to start using your dashboard.</p>
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form className="space-y-4" onSubmit={handleSubmit} noValidate>
             <div>
               <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="name">
                 Name
@@ -113,8 +113,6 @@ export default function RegisterPage() {
                 value={form.password}
                 onChange={handleChange}
                 minLength={6}
-                pattern="^(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z0-9]).{6,}$"
-                title="At least 6 characters, one uppercase letter, one number, and one special character."
                 autoComplete="new-password"
                 required
                 className="w-full rounded-xl border border-slate-300 bg-white/80 px-3 py-2.5 pr-11 outline-none transition focus:border-teal-500"
