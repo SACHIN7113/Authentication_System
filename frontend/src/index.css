@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-a: #f8fafc;
+  --bg-b: #dbeafe;
+  --bg-c: #cffafe;
+  --ink: #0f172a;
+  --muted: #334155;
+  --card: rgba(255, 255, 255, 0.75);
+  --line: rgba(15, 23, 42, 0.12);
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 20% 10%, var(--bg-c), transparent 35%),
+    radial-gradient(circle at 85% 15%, var(--bg-b), transparent 35%),
+    linear-gradient(145deg, var(--bg-a), #f1f5f9);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.glass-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.fade-up {
+  animation: fadeUp 0.45s ease-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
