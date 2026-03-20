@@ -135,6 +135,26 @@ Frontend (`frontend/.env`):
 4. Set frontend `VITE_API_BASE_URL` to deployed backend `/api` URL.
 5. Add frontend domain in backend `CORS_ORIGINS`.
 
+### Render Backend Notes
+
+If you deploy this repo to Render as a web service from the repository root:
+
+```bash
+Build Command: pip install -r backend/requirements.txt
+Start Command: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+```
+
+This repo includes `.python-version` pinned to `3.11.9` so Render does not fall back to its newer default Python runtime for fresh services.
+
+Set these backend environment variables in Render:
+
+- `MONGO_URI`
+- `MONGO_DB_NAME`
+- `JWT_SECRET_KEY`
+- `JWT_ALGORITHM`
+- `ACCESS_TOKEN_EXPIRE_MINUTES`
+- `CORS_ORIGINS`
+
 ## Detailed Documentation
 
 For implementation flow, architecture details, and testing checklist, see:
